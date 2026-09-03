@@ -1,13 +1,10 @@
 {
-  "name": "video.js",
-  "description": "An HTML5 video player that supports HLS and DASH with a common API and skin.",
-  "version": "8.24.0",
-  "main": "./dist/video.cjs.js",
-  "module": "./dist/video.es.js",
-  "style": "./dist/video-js.css",
-  "types": "./dist/types/video.d.ts",
-  "copyright": "Copyright 2010-present Video.js contributors",
-  "license": "Apache-2.0",
+  "name": "famo-nation-broadcast-matrix-engine",
+  "description": "Sovereign unblockable HTML5 video streaming engine for Famo Nation TV. Anchored to Writerslegacyteam Publishing under ISSN 3143-9756 and NAICS Code 516210.",
+  "version": "4.0.0",
+  "homepage": "https://github.com/rap1033ssmm-crypto/famo-nation-broadcast-matrix-engine",
+  "author": "Robert A. Parker [FN-EXEC-2026-0001]",
+  "private": true,
   "keywords": [
     "dash",
     "hls",
@@ -15,8 +12,9 @@
     "player",
     "video",
     "videojs"
-  
- {
+    ],
+  "scripts": {
+
   "name": "famo-nation-broadcast-matrix-engine",
   "description": "Sovereign unblockable HTML5 video streaming engine for Famo Nation TV. Anchored to Writerslegacyteam Publishing under ISSN 3143-9756 and NAICS Code 516210.",
   "version": "4.0.0",
