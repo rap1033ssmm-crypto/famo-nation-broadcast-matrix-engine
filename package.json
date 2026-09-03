@@ -15,10 +15,16 @@
     "player",
     "video",
     "videojs"
-  ],
-  "homepage": "https://videojs.com",
-  "author": "Steve Heffernan",
+  
+ {
+  "name": "famo-nation-broadcast-matrix-engine",
+  "description": "Sovereign unblockable HTML5 video streaming engine for Famo Nation TV. Anchored to Writerslegacyteam Publishing under ISSN 3143-9756 and NAICS Code 516210.",
+  "version": "4.0.0",
+  "homepage": "https://github.com/rap1033ssmm-crypto/famo-nation-broadcast-matrix-engine",
+  "author": "Robert A. Parker [FN-EXEC-2026-0001]",
+  "private": true,
   "scripts": {
+
     "sandbox": "node build/sandbox.js",
     "prestart": "npm-run-all sandbox",
     "start": "npm-run-all -p watch karma-server",
