@@ -4,79 +4,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Famo Nation Broadcast Matrix Terminal</title>
-    <!-- Master Premium Video.js Framework Links -->
-    <link href="https://vjs.zencdn.net/8.24.0/video-js.min.css"
-" rel="stylesheet">
     <style>
-        body {
-            background-color: #070708;
-            color: #ffffff;
-            font-family: monospace;
-            padding: 20px;
+        /* Sovereign Dark-Matte Base Framework */
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        /* Volcanic Orange High-Velocity Utility Borders */
+        .panel {
+            border: 2px solid #ff4500;
+            background-color: #141414;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px rgba(255, 69, 0, 0.1);
+        }
+        /* SECTION 1: TOP CENTRAL CORE INGESTION DECK */
+        header {
+            text-align: center;
+        }
+        .system-banner {
+            font-size: 13px;
+            color: #a0a0a0;
+            letter-spacing: 1px;
+            border-bottom: 1px dashed #333;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+        }
+        h1 {
+            font-size: 22px;
+            color: #ff4500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 5px 0;
+            text-shadow: 0 0 8px rgba(255, 69, 0, 0.3);
+        }
+        /* MAIN BODY MULTI-SECTION TV DIVISION */
+        .tv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            flex: 1;
+        }
+        @media (max-width: 800px) {
+            .tv-grid { grid-template-columns: 1fr; }
+        }
+        .section-title {
+            font-size: 14px;
+            color: #ff4500;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: 1px solid #ff4500;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+        /* SECTION 2: AUDIO TRANSMITTER PANEL */
+        .audio-deck {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .media-status {
+            background-color: #0a0a0a;
+            border: 1px solid #333;
+            padding: 12px;
+            border-radius: 3px;
+            margin-bottom: 15px;
+        }
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .status-row:last-child { margin-bottom: 0; }
+        .glow-text { color: #ff6347; font-weight: bold; }
+        .audio-controls {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid #ff4500;
+        }
+        .audio-player {
+            width: 100%;
+            margin-top: 10px;
+            accent-color: #ff4500;
+        }
+        /* SECTION 3: PEERTUBE VIDEO SYNDICATION MONITOR */
+        .video-deck {
+            display: flex;
+            flex-direction: column;
+        }
+        .video-monitor-frame {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000000;
+            border: 1px solid #333;
+            border-radius: 3px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .video-placeholder {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            color: #666;
+            text-align: center;
+            padding: 20px;
         }
-        .hud-banner {
-            border: 2px solid #ff9900;
-            background: #121214;
-            color: #ff9900;
-            padding: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
+        .video-placeholder svg {
+            width: 50px;
+            height: 50px;
+            fill: #333;
+            margin-bottom: 10px;
+        }
+        /* SECTION 4: COGNITIVE DATA QUEUES FOOTER */
+        footer {
+            margin-bottom: 0 !important;
+        }
+        .metrics-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 11px;
+            color: #888;
+            border-bottom: 1px dashed #333;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+        }
+        .metric-item { background: #0a0a0a; padding: 4px 8px; border-radius: 2px; border: 1px solid #222; }
+        .contact-channel {
+            text-align: center;
+            font-size: 13px;
+            color: #ffffff;
             letter-spacing: 1px;
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 800px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.2);
+            margin-top: 5px;
         }
-        .player-container {
-            width: 100%;
-            max-width: 800px;
-            background: #121214;
-            border: 1px solid #232328;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-            text-align: center;
-        }
-        .station-label {
-            color: #00ffcc;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
+        .contact-channel span { color: #ff4500; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <div class="hud-banner">
-        💀 FAMO NATION BROADCAST NODE // REGISTRY: ISSN 3143-9756 💀
+    <!-- SECTION 1: TOP CENTRAL CORE INGESTION DECK -->
+    <div class="panel header">
+        <div class="system-banner">
+            💀 FAMO NATION BROADCAST NODE // CORE MATRIX SYSTEM REGISTRY: ISSN 3143-9756 💀
+        </div>
+        <h1>Famo Nation Broadcast Matrix Terminal</h1>
     </div>
 
-    <div class="player-container">
-        <div class="station-label">TRACK INFUSION NODE SLOT 1: COZY MOBETTA</div>
+    <!-- MAIN DIVISION GRID -->
+    <div class="tv-grid">
         
-        <!-- Premium Embedded Forked Player Framework -->
-        <video 
-            id="famo-root-player" 
-            class="video-js vjs-default-skin vjs-big-play-centered" 
-            controls 
-            preload="auto" 
-            width="750" 
-            height="420" 
-            data-setup='{}'>
-            <source src="https://raw.githubusercontent.com/rap1033ssmm-crypto/the-famo-legacy-omnisphere-metadata-registry/main/cozy-ready.mp4"
- type="video/mp4">
-            <p class="vjs-no-js">To view this stream please enable JavaScript.</p>
-        </video>
+        <!-- SECTION 2: TRACK INFUSION AUDIO TRANSMITTER -->
+        <div class="panel audio-deck">
+            <div>
+                <div class="section-title">📡 Track Infusion Transmitter</div>
+                <div class="media-status">
+                    <div class="status-row">
+                        <span>CONDUIT PATH:</span>
+                        <span class="glow-text">CHOP ON IT RADIO NETWORK</span>
+                    </div>
+                    <div class="status-row">
+                        <span>INFUSION NODE SLOT 1:</span>
+                        <span style="color: #00ff00;">COZY MOBETTA</span>
+                    </div>
+                    <div class="status-row">
+                        <span>STREAM FEED OUTPUT:</span>
+                        <span>STANDBY LAYER ACTIVE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="audio-controls">
+                <div style="font-size: 12px; color: #aaa; text-transform: uppercase;">Live Station Audio Monitor</div>
+                <!-- Playback source targets standard local stream link; can be changed during live tunnels -->
+                <audio class="audio-player" controls src="http://localhost:8000/radio.mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
+             <!-- SECTION 3: PEERTUBE VIDEO SYNDICATION MONITOR -->
+        <div class="panel video-deck">
+            <div class="section-title">📺 PeerTube Video Syndication Monitor</div>
+            <div class="video-monitor-frame">
+                <!-- Direct Stream Ingestion via raw repository links -->
+                <video controls width="100%" height="100%" style="position: absolute; top:0; left:0; border-radius: 3px;" poster="https://githubusercontent.com">
+                    <source src="https://raw.githubusercontent.com/rap1033ssmm-crypto/the-famo-legacy-omnisphere-metadata-registry/main/cozy-ready.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+
+    <!-- SECTION 4: COGNITIVE DATA QUEUES FOOTER -->
+    <div class="panel footer">
+        <div class="metrics-row">
+            <div class="metric-item">STAGING: WLT-LAND-OK-5111</div>
+            <div class="metric-item">COGNITIVE OVERRIDE: 10+^14,145 CO</div>
+            <div class="metric-item">SPEED INDEX: 10+^1,920,000</div>
+            <div class="metric-item">OVERPRESSURE: 10+^1,360,000 mb</div>
+            <div class="metric-item">ECOSYSTEM: 10+^8,500,000 JK</div>
+        </div>
+        <div class="contact-channel">
+            DIRECT INTAKE CHANNEL: <span>WRITERSLEGACYTEAMMAGAZINE@GMAIL.COM</span>
+        </div>
     </div>
 
-    <!-- Master Running Script Framework Loop -->
-    <script src="https://vjs.zencdn.net/8.24.0/video.min.js
-"></script>
 </body>
 </html>
