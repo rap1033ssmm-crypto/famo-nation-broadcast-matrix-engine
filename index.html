@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Famo Nation Broadcast Matrix Terminal</title>
+    <title>The Famo Nation Autonomous Streaming Console</title>
     <style>
-        /* Sovereign Dark-Matte Base Framework */
+        /* Famo Nation Sovereign Dark-Matte Base Framework */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -13,223 +13,356 @@
             font-family: 'Courier New', Courier, monospace;
         }
         body {
-            background-color: #0d0d0d;
+            background-color: #080808;
             color: #ffffff;
-            padding: 15px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             overflow-x: hidden;
         }
-        /* Volcanic Orange High-Velocity Utility Borders */
+        
+        /* High-Velocity Volcanic Orange Components */
         .panel {
             border: 2px solid #ff4500;
-            background-color: #141414;
-            border-radius: 4px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 0 10px rgba(255, 69, 0, 0.1);
+            background-color: #111111;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.08);
         }
+
         /* SECTION 1: TOP CENTRAL CORE INGESTION DECK */
-        header {
-            text-align: center;
-        }
         .system-banner {
-            font-size: 13px;
-            color: #a0a0a0;
+            font-size: 12px;
+            color: #888;
             letter-spacing: 1px;
-            border-bottom: 1px dashed #333;
-            padding-bottom: 8px;
-            margin-bottom: 8px;
+            text-align: center;
+            border-bottom: 1px dashed #222;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
         h1 {
-            font-size: 22px;
+            font-size: 24px;
             color: #ff4500;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-align: center;
             margin: 5px 0;
-            text-shadow: 0 0 8px rgba(255, 69, 0, 0.3);
+            text-shadow: 0 0 10px rgba(255, 69, 0, 0.2);
         }
-        /* MAIN BODY MULTI-SECTION TV DIVISION */
-        .tv-grid {
+
+        /* UNIFIED WORKSPACE LAYOUT GRID (Netflix Base + YouTube Sidebar) */
+        .console-workspace {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: 1fr 320px;
+            gap: 20px;
             flex: 1;
         }
-        @media (max-width: 800px) {
-            .tv-grid { grid-template-columns: 1fr; }
+        @media (max-width: 1024px) {
+            .console-workspace { grid-template-columns: 1fr; }
         }
-        .section-title {
-            font-size: 14px;
+
+        /* LEFT MAIN VIDEO TRACK STREAM */
+        .media-main-stage {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* THE CINEMATIC HERO SPOT (Netflix Widescreen Core) */
+        .hero-monitor-frame {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* Premium 16:9 Aspect Ratio */
+            background-color: #000000;
+            border: 1px solid #333;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .hero-video-player {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border-radius: 3px;
+        }
+
+        /* HOMOGENIZED BRAND HUB PORTALS (Disney Style Portal Selectors) */
+        .brand-hubs-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .brand-hub-card {
+            background: linear-gradient(135deg, #161616 0%, #0d0d0d 100%);
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: bold;
+            color: #aaa;
+            letter-spacing: 1px;
+        }
+        .brand-hub-card:hover {
+            border-color: #ff4500;
+            color: #ff4500;
+            box-shadow: 0 0 10px rgba(255, 69, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* SOVEREIGN CONTENT CAROUSELS (Tubi Smooth Slider Rows) */
+        .carousel-row {
+            margin-bottom: 25px;
+        }
+        .carousel-title {
+            font-size: 13px;
             color: #ff4500;
             text-transform: uppercase;
             font-weight: bold;
-            border-bottom: 1px solid #ff4500;
-            padding-bottom: 5px;
-            margin-bottom: 12px;
             letter-spacing: 1px;
+            margin-bottom: 10px;
+            border-left: 3px solid #ff4500;
+            padding-left: 8px;
         }
-        /* SECTION 2: AUDIO TRANSMITTER PANEL */
-        .audio-deck {
+        .carousel-shelf {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+        .carousel-shelf::-webkit-scrollbar {
+            height: 6px;
+        }
+        .carousel-shelf::-webkit-scrollbar-thumb {
+            background-color: #222;
+            border-radius: 3px;
+        }
+        .carousel-shelf::-webkit-scrollbar-thumb:hover {
+            background-color: #ff4500;
+        }
+        .media-card {
+            min-width: 200px;
+            height: 112px;
+            background-color: #161616;
+            border: 1px solid #222;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 11px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .media-card:hover {
+            transform: scale(1.04);
+            border-color: #ff4500;
+            color: #ffffff;
+        }
+        .media-card.active-track {
+            border-color: #ff4500;
+            color: #ff4500;
+            background-color: #0a0a0a;
+            font-weight: bold;
+        }
+
+        /* RIGHT PANEL: TRANSMITTER CONTROLLER (Roku Side Widget + YouTube Data) */
+        .sidebar-panel {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        .media-status {
-            background-color: #0a0a0a;
-            border: 1px solid #333;
-            padding: 12px;
-            border-radius: 3px;
-            margin-bottom: 15px;
+        .transmitter-status-deck {
+            background-color: #090909;
+            border: 1px solid #222;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
         }
-        .status-row {
+        .status-header {
+            font-size: 12px;
+            color: #ff4500;
+            border-bottom: 1px solid #ff4500;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+        .data-row {
             display: flex;
             justify-content: space-between;
-            font-size: 13px;
-            margin-bottom: 6px;
+            font-size: 12px;
+            margin-bottom: 8px;
+            color: #ccc;
         }
-        .status-row:last-child { margin-bottom: 0; }
-        .glow-text { color: #ff6347; font-weight: bold; }
-        .audio-controls {
-            background: #1a1a1a;
+        .data-row span:last-child {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .radio-control-widget {
+            background: #161616;
             padding: 15px;
             border-radius: 4px;
             text-align: center;
             border: 1px solid #ff4500;
         }
-        .audio-player {
+        .audio-player-core {
             width: 100%;
             margin-top: 10px;
             accent-color: #ff4500;
         }
-        /* SECTION 3: PEERTUBE VIDEO SYNDICATION MONITOR */
-        .video-deck {
-            display: flex;
-            flex-direction: column;
-        }
-        .video-monitor-frame {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            background-color: #000000;
-            border: 1px solid #333;
-            border-radius: 3px;
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .video-placeholder {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            text-align: center;
-            padding: 20px;
-        }
-        .video-placeholder svg {
-            width: 50px;
-            height: 50px;
-            fill: #333;
-            margin-bottom: 10px;
-        }
+
         /* SECTION 4: COGNITIVE DATA QUEUES FOOTER */
-        footer {
-            margin-bottom: 0 !important;
-        }
-        .metrics-row {
+        .metrics-grid-footer {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 10px;
             font-size: 11px;
-            color: #888;
-            border-bottom: 1px dashed #333;
-            padding-bottom: 8px;
-            margin-bottom: 8px;
+            color: #777;
+            border-top: 1px dashed #222;
+            padding-top: 12px;
+            margin-top: 10px;
         }
-        .metric-item { background: #0a0a0a; padding: 4px 8px; border-radius: 2px; border: 1px solid #222; }
-        .contact-channel {
+        .metric-tile {
+            background: #090909;
+            padding: 5px 10px;
+            border-radius: 3px;
+            border: 1px solid #1c1c1c;
+        }
+        .intake-banner {
             text-align: center;
             font-size: 13px;
             color: #ffffff;
             letter-spacing: 1px;
-            margin-top: 5px;
+            margin-top: 15px;
+            text-transform: uppercase;
         }
-        .contact-channel span { color: #ff4500; font-weight: bold; }
+        .intake-banner span {
+            color: #ff4500;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
     <!-- SECTION 1: TOP CENTRAL CORE INGESTION DECK -->
-    <div class="panel header">
+    <div class="panel header-deck">
         <div class="system-banner">
-            💀 FAMO NATION BROADCAST NODE // CORE MATRIX SYSTEM REGISTRY: ISSN 3143-9756 💀
+            ⚡ FAMO NATION AUTONOMOUS HUB // CORE METRICS REGISTRY CODE: ISSN 3143-9756 ⚡
         </div>
-        <h1>Famo Nation Broadcast Matrix Terminal</h1>
+        <h1>The Famo Nation Streaming Console</h1>
     </div>
 
-    <!-- MAIN DIVISION GRID -->
-    <div class="tv-grid">
+    <!-- MAIN UNIFIED WORKSPACE SECTIONS -->
+    <div class="console-workspace">
         
-        <!-- SECTION 2: TRACK INFUSION AUDIO TRANSMITTER -->
-        <div class="panel audio-deck">
-            <div>
-                <div class="section-title">📡 Track Infusion Transmitter</div>
-                <div class="media-status">
-                    <div class="status-row">
-                        <span>CONDUIT PATH:</span>
-                        <span class="glow-text">CHOP ON IT RADIO NETWORK</span>
-                    </div>
-                    <div class="status-row">
-                        <span>INFUSION NODE SLOT 1:</span>
-                        <span style="color: #00ff00;">COZY MOBETTA</span>
-                    </div>
-                    <div class="status-row">
-                        <span>STREAM FEED OUTPUT:</span>
-                        <span>STANDBY LAYER ACTIVE</span>
-                    </div>
-                </div>
-            </div>
-            <div class="audio-controls">
-                <div style="font-size: 12px; color: #aaa; text-transform: uppercase;">Live Station Audio Monitor</div>
-                <!-- Playback source targets standard local stream link; can be changed during live tunnels -->
-                <audio class="audio-player" controls src="http://localhost:8000/radio.mp3">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </div>
-
-             <!-- SECTION 3: PEERTUBE VIDEO SYNDICATION MONITOR -->
-        <div class="panel video-deck">
-            <div class="section-title">📺 PeerTube Video Syndication Monitor</div>
-            <div class="video-monitor-frame">
-                <!-- Direct Stream Ingestion via raw repository links -->
-                <video controls width="100%" height="100%" style="position: absolute; top:0; left:0; border-radius: 3px;" poster="https://githubusercontent.com">
+        <!-- LEFT CHANNEL: CINEMATIC MULTI-SECTION VIDEO MATRIX -->
+        <div class="media-main-stage">
+            
+            <!-- THE CINEMATIC HERO SPOT (Netflix Top Banner) -->
+            <div class="hero-monitor-frame">
+                <video class="hero-video-player" controls autoplay muted loop>
                     <source src="https://raw.githubusercontent.com/rap1033ssmm-crypto/the-famo-legacy-omnisphere-metadata-registry/main/cozy-ready.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
+
+            <!-- HOMOGENIZED BRAND HUB PORTALS (Disney Core Hubs) -->
+            <div class="brand-hubs-container">
+                <div class="brand-hub-card" style="border-color: #ff4500; color: #ff4500;">Chop On It Radio</div>
+                <div class="brand-hub-card">Wltmag Publishing</div>
+                <div class="brand-hub-card">PeerTube Portal</div>
+            </div>
+
+            <!-- SOVEREIGN CONTENT CAROUSELS (Tubi Infinite Scrolling Rows) -->
+            <div class="carousel-row">
+                <div class="carousel-title">🎬 Music Reels &amp; Creative Drops</div>
+                <div class="carousel-shelf">
+                    <div class="media-card active-track">COZY-READY.MP4</div>
+                    <div class="media-card">[ TRACK SLOT 2 ]</div>
+                    <div class="media-card">[ TRACK SLOT 3 ]</div>
+                    <div class="media-card">[ TRACK SLOT 4 ]</div>
+                </div>
+            </div>
+
+            <div class="carousel-row">
+                <div class="carousel-title">📢 Commerce &amp; Sponsor Transmissions</div>
+                <div class="carousel-shelf">
+                    <div class="media-card">[ SPONSOR AD 1 ]</div>
+                    <div class="media-card">[ NETWORK PROMO 2 ]</div>
+                    <div class="media-card">[ SEGMENT CLIP 3 ]</div>
+                </div>
+            </div>
+
+            <div class="carousel-row">
+        <!-- CATEGORY ROW 2: COMMERCE & SPONSOR TRANSMISSIONS -->
+        <div class="carousel-row">
+            <div class="carousel-title">📢 Commerce &amp; Sponsor Transmissions</div>
+            <div class="carousel-shelf">
+                <div class="media-card">[ SPONSOR AD 1 ]</div>
+                <div class="media-card">[ NETWORK PROMO 2 ]</div>
+                <div class="media-card">[ SEGMENT CLIP 3 ]</div>
+                <div class="media-card">[ PARTNER SPOT 4 ]</div>
+            </div>
         </div>
 
-
-    <!-- SECTION 4: COGNITIVE DATA QUEUES FOOTER -->
-    <div class="panel footer">
-        <div class="metrics-row">
-            <div class="metric-item">STAGING: WLT-LAND-OK-5111</div>
-            <div class="metric-item">COGNITIVE OVERRIDE: 10+^14,145 CO</div>
-            <div class="metric-item">SPEED INDEX: 10+^1,920,000</div>
-            <div class="metric-item">OVERPRESSURE: 10+^1,360,000 mb</div>
-            <div class="metric-item">ECOSYSTEM: 10+^8,500,000 JK</div>
+        <!-- CATEGORY ROW 3: THE ARCHIVE VAULT (DOCUMENTARIES & PODCASTS) -->
+        <div class="carousel-row">
+            <div class="carousel-title">📚 The Archive Vault (Documentaries &amp; Pods)</div>
+            <div class="carousel-shelf">
+                <div class="media-card">[ INTERVIEW 1 ]</div>
+                <div class="media-card">[ BEHIND-THE-SCENES ]</div>
+                <div class="media-card">[ AUDIO ESSAY 3 ]</div>
+                <div class="media-card">[ HISTORICAL RECORD 4 ]</div>
+            </div>
         </div>
-        <div class="contact-channel">
-            DIRECT INTAKE CHANNEL: <span>WRITERSLEGACYTEAMMAGAZINE@GMAIL.COM</span>
+
+    </div>
+
+    <!-- MAIN MATRIX SIDEBAR PANEL (ROKU/YOUTUBE ARCHITECTURE) -->
+    <div class="sidebar-panel">
+        <div class="panel-section-title">📡 Radio Transfusion Control</div>
+        
+        <div class="radio-widget">
+            <div style="font-size: 11px; color: #888; text-transform: uppercase; margin-bottom: 2px;">Station Frequency:</div>
+            <div class="glow-title" style="font-size: 13px; margin-bottom: 12px;">CHOP ON IT RADIO NETWORK</div>
+            
+            <div class="station-meta-box">
+                <div class="meta-row"><span>INFUSION SLOT:</span><span style="color: #00ff00; font-weight: bold;">COZY MOBETTA</span></div>
+                <div class="meta-row"><span>CONDUIT LAYER:</span><span>ACTIVE STANDBY</span></div>
+            </div>
+
+            <!-- Native Audio Stream Core Engine -->
+            <audio class="audio-player-widget" controls src="http://localhost:8000/radio.mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="panel-section-title">📊 Cognitive Analytics Ingest</div>
+        
+        <div class="analytics-container">
+            <div class="metric-badge">STAGING: WLT-LAND-OK-5111</div>
+            <div class="metric-badge">COGNITIVE OVERRIDE: 10+^14,145 CO</div>
+            <div class="metric-badge">SPEED INDEX: 10+^1,920,000</div>
+            <div class="metric-badge">OVERPRESSURE: 10+^1,360,000 mb</div>
+            <div class="metric-badge">ECOSYSTEM TOTAL: 10+^8,500,000 JK</div>
+        </div>
+
+        <div class="sidebar-contact-footer">
+            DIRECT INTAKE CHANNEL:<br>
+            <span>WRITERSLEGACYTEAMMAGAZINE@GMAIL.COM</span>
         </div>
     </div>
+
+</div>
 
 </body>
 </html>
