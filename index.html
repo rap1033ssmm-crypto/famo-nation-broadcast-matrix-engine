@@ -1,363 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Famo Nation Broadcast Matrix Terminal</title>
-    <style>
-        /* 100% Ubiquity Global Engine Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            /* Full-Bleed Centering Background Matrix Extraction */
-            background: linear-gradient(rgba(13, 13, 13, 0.85), rgba(13, 13, 13, 0.85)), 
-                        url('The%20Famo-Legacy%20OmniSphere%20Famo%20Nation%20TV%20Roku%20Channel%20Network%20(1).webp');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            overflow-x: hidden;
-        }
-        /* Unified Responsive Dashboard Frame */
-        .console-container {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 20px;
-            max-width: 1600px;
-            width: 100%;
-            margin: 0 auto;
-            flex: 1;
-        }
-        @media (max-width: 1024px) {
-            .console-container { grid-template-columns: 1fr; }
-        }
-        /* Premium Glass-Morphic Component Panels */
-        .glass-panel {
-            background: rgba(20, 20, 20, 0.65);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 69, 0, 0.25);
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            margin-bottom: 20px;
-        }
-        /* SECTION 1: TOP MAIN HEADER STAMP */
-        .header-deck {
-            text-align: center;
-            border-bottom: 2px solid #ff4500;
-            position: relative;
-        }
-        .registry-tag {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 12px;
-            color: #ff6347;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        h1 {
-            font-size: 26px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #ffffff;
-            margin-bottom: 5px;
-        }
-        /* THE MEDIA HUB CORRIDOR PANEL */
-        .brand-hub-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-        .hub-btn {
-            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(15, 15, 15, 0.8));
-            border: 1px solid rgba(255, 69, 0, 0.4);
-            border-radius: 8px;
-            padding: 12px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 13px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #ff4500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .hub-btn:hover {
-            background: #ff4500;
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
-            transform: translateY(-2px);
-        }
-        /* THE CINEMATIC HERO MONITORS */
-        .hero-stage {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            background: #000;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            overflow: hidden;
-            margin-bottom: 25px;
-        }
-        .hero-video {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-        }
-        /* HORIZONTAL SHELF CAROUSELS (TUBI STYLE) */
-        .carousel-row {
-            margin-bottom: 25px;
-        }
-        .carousel-title {
-            font-size: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #ffffff;
-            margin-bottom: 12px;
-            font-weight: bold;
-            border-left: 3px solid #ff4500;
-            padding-left: 10px;
-        }
-        .carousel-shelf {
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-        }
-        .carousel-shelf::-webkit-scrollbar {
-            height: 6px;
-        }
-        .carousel-shelf::-webkit-scrollbar-thumb {
-            background: rgba(255, 69, 0, 0.4);
-            border-radius: 4px;
-        }
-        .media-card {
-            min-width: 200px;
-            height: 115px;
-            background: rgba(30, 30, 30, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            text-transform: uppercase;
-            color: #888;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .media-card:hover {
-            border-color: #ff4500;
-            color: #ffffff;
-            transform: scale(1.03);
-            background: rgba(40, 40, 40, 0.9);
-        }
-        /* ADVANCED NEON RADIO WIDGET STYLES (ROKU/YOUTUBE ARCHITECTURE) */
-        .radio-control-deck {
-            background: linear-gradient(180deg, rgba(25, 25, 25, 0.85), rgba(15, 15, 15, 0.9));
-            border: 2px solid #ff4500;
-            box-shadow: 0 0 20px rgba(255, 69, 0, 0.25), inset 0 0 15px rgba(255, 69, 0, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .live-badge {
-            background: #ff4500;
-            color: #ffffff;
-            font-size: 10px;
-            font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 3px;
-            display: inline-block;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            animation: pulse-glow 2s infinite;
-            text-transform: uppercase;
-        }
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 69, 0, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0); }
-        }
-        .radio-title {
-            font-size: 14px;
-            letter-spacing: 1px;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-        .meta-display-box {
-            background: #0a0a0a;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 6px;
-            padding: 12px;
-            margin-bottom: 18px;
-            text-align: left;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .meta-item-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            margin-bottom: 6px;
-            color: #aaa;
-        }
-        .meta-item-row:last-child { margin-bottom: 0; }
-        .meta-highlight { color: #ff4500; font-weight: bold; }
-        .native-audio-widget {
-            width: 100%;
-            accent-color: #ff4500;
-            margin-top: 5px;
-        }
-        /* HIGH-INTEGRITY ANALYTICS QUEUES */
-        .analytics-ledger {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .ledger-row {
-            background: rgba(10, 10, 10, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-family: 'Courier New', Courier, monospace;
-            color: #888;
-            display: flex;
-            justify-content: space-between;
-        }
-        .ledger-val { color: #ffffff; font-weight: bold; }
-        .intake-footer {
-            text-align: center;
-            font-size: 12px;
-            color: #888;
-            margin-top: 20px;
-            border-top: 1px dashed rgba(255, 255, 255, 0.1);
-            padding-top: 15px;
-            letter-spacing: 1px;
-        }
-        .intake-footer span { color: #ff4500; font-weight: bold; }
-    </style>
-</head>
-<body>
+<!-- ============================================================================================== -->
+<!-- [WLT-BROADCAST]: VIDEO.JS ENGINE INTEGRATION // PLATFORM MATRIX CORE: 2026                     -->
+<!-- ============================================================================================== -->
+<!-- STAGING NODE: WLT-LAND-OK-5111               * REGISTRY CODE: ISSN 3143-9756                   -->
+<!-- COMPLIANCE TIER: GRADE-A BROADCAST CONSOLE   * ENGINE INTERFACE: SERVERLESS EDGE CACHED        -->
+<!-- ============================================================================================== -->
 
-<!-- MAIN GRID WORKSPACE CONTAINER -->
-<div class="console-container" style="margin-top: 20px;">
+<audio id="radioPlayer" src="http://localhost:8000/radio.mp3" controls preload="none" style="width: 100%; border-radius: 0px; background: #0d0e10; border: 2px solid #00ff66;"></audio>
 
-    <!-- LEFT STREAM ENGINE DIVISION (NETFLIX/TUBI SCREEN SECTORS) -->
-    <div class="main-content-flow">
-        
-        <!-- SECTION 1: MASTER CENTRAL DECK HEADER -->
-        <div class="glass-panel header-deck">
-            <div class="registry-tag">⚡ FAMO NATION AUTONOMOUS HUB // REGISTRY CODE: ISSN 3143-9756 ⚡</div>
-            <h1>Famo Nation Autonomous Streaming Console</h1>
-        </div>
+<!-- 1. INGEST PREMIUM STREAMING STYLE SHEETS NATIVELY FROM THE GLOBAL CDN MESH -->
+<link href="https://zencdn.net" rel="stylesheet" />
+<!-- High-Contrast Neon Cyber-Green Theme Customization Override Overlays -->
+<style>
+  .video-js { font-family: 'Courier New', monospace; color: #00ff66; }
+  .vjs-matrix-theme .vjs-control-bar { background-color: rgba(13, 14, 16, 0.95) !important; border-top: 2px solid #00ff66; }
+  .vjs-matrix-theme .vjs-play-progress, .vjs-matrix-theme .vjs-volume-level { background: #00ff66 !important; }
+  .vjs-matrix-theme .vjs-big-play-button { background-color: rgba(20, 21, 25, 0.8) !important; border: 2px solid #00ff66 !important; border-radius: 0px !important; color: #00ff66 !important; }
+  .vjs-ad-overlay { position: absolute; top: 15px; left: 15px; background: rgba(13, 14, 16, 0.9); border-left: 4px solid #00ff66; color: #ffffff; padding: 8px 12px; font-size: 11px; z-index: 10; display: none; }
+</style>
 
-        <!-- REVOLUTIONARY BRAND HUB PORTALS -->
-        <div class="brand-hub-row">
-            <div class="hub-btn">Chop On It Radio</div>
-            <div class="hub-btn">Wltmag Publishing</div>
-            <div class="hub-btn">PeerTube Portal</div>
-        </div>
+<!-- 2. THE WEAPONIZED VIDEOJS STREAMING CONSOLE CANVAS EMBED (REPLACES RAW VIDEO TAG) -->
+<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto; background: #0d0e10; border: 3px solid #141519;">
+  <!-- Live Commercial Ad Notice Overlay Container Box -->
+  <div id="adNotice" class="vjs-ad-overlay">📢 COMMERCIAL SPONSOR TRANSMISSION ACTIVE...</div>
+  
+  <video id="famoNationConsole" class="video-js vjs-matrix-theme vjs-16-9 vjs-big-play-button-centered" controls preload="auto" width="720" poster="https://githubusercontent.com" data-setup='{}'>
+    <!-- The primary production media video stream file track node -->
+    <source src="https://raw.githubusercontent.com/rap1033ssmm-crypto/the-famo-legacy-omnisphere-metadata-registry/main/cozy-ready.mp4" type="video/mp4" />
 
-        <!-- THE CINEMATIC MASTER HERO MONITOR -->
-        <div class="hero-stage">
-            <video class="hero-video" controls width="100%" height="100%">
-                <source src="https://raw.githubusercontent.com/rap1033ssmm-crypto/the-famo-legacy-omnisphere-metadata-registry/main/cozy-ready.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-
-        <!-- CATEGORY ROW 1: MUSIC REELS & CREATIVE DROPS -->
-        <div class="carousel-row">
-            <div class="carousel-title">🎬 Music Reels &amp; Creative Drops</div>
-            <div class="carousel-shelf">
-                <div class="media-card" style="border-color: #ff4500; color: #fff;">COZY-READY.MP4</div>
-                <div class="media-card">[ TRACK SLOT 2 ]</div>
-                <div class="media-card">[ TRACK SLOT 3 ]</div>
-                <div class="media-card">[ TRACK SLOT 4 ]</div>
-            </div>
-        </div>
-
-        <!-- CATEGORY ROW 2: COMMERCE & SPONSOR TRANSMISSIONS -->
-        <div class="carousel-row">
-            <div class="carousel-title">📢 Commerce &amp; Sponsor Transmissions</div>
-            <div class="carousel-shelf">
-                <div class="media-card">[ SPONSOR AD 1 ]</div>
-                <div class="media-card">[ NETWORK PROMO 2 ]</div>
-                <div class="media-card">[ SEGMENT CLIP 3 ]</div>
-                <div class="media-card">[ PARTNER SPOT 4 ]</div>
-            </div>
-        </div>
-
-        <!-- CATEGORY ROW 3: THE ARCHIVE VAULT (DOCUMENTARIES & PODS) -->
-        <div class="carousel-row">
-            <div class="carousel-title">📚 The Archive Vault (Documentaries &amp; Pods)</div>
-            <div class="carousel-shelf">
-                <div class="media-card">[ INTERVIEW 1 ]</div>
-                <div class="media-card">[ BEHIND-THE-SCENES ]</div>
-                <div class="media-card">[ AUDIO ESSAY 3 ]</div>
-                <div class="media-card">[ HISTORICAL RECORD 4 ]</div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- RIGHT CONSOLE ENGINE PANEL (ROKU SIDEBAR NAVIGATION DECK) -->
-    <div class="sidebar-column">
-        
-        <!-- HIGH-IMPACT TRANSMITTER CONTROLLER MODULE -->
-        <div class="radio-control-deck">
-            <div class="live-badge">ON AIR</div>
-            <div class="radio-title">Radio Transfusion Control</div>
-            
-            <div class="meta-display-box">
-                <div class="meta-item-row"><span>FREQUENCY:</span><span class="meta-highlight">CHOP ON IT NETWORK</span></div>
-                <div class="meta-item-row"><span>INFUSION SLOT:</span><span style="color: #00ff00;">COZY MOBETTA</span></div>
-                <div class="meta-item-row"><span>CONDUIT LAYER:</span><span>ACTIVE STANDBY</span></div>
-            </div>
-
-            <!-- Native Jukebox Core Audio Stream Pipeline -->
-            <audio class="native-audio-widget" controls src="http://localhost:8000/radio.mp3">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <!-- COGNITIVE REAL-TIME DATA QUEUES -->
-        <div class="glass-panel" style="padding: 15px;">
-            <div style="font-size: 12px; font-weight: bold; color: #ff4500; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 1px; border-bottom: 1px solid rgba(255, 69, 0, 0.2); padding-bottom: 5px;">
-                📊 Cognitive Analytics Ingest
-            </div>
-            <div class="analytics-ledger">
-                <div class="ledger-row"><span>STAGING SITE:</span><span class="ledger-val">WLT-LAND-OK-5111</span></div>
-                <div class="ledger-row"><span>OVERRIDE VALUE:</span><span class="ledger-val">10+^14,145 CO</span></div>
-                <div class="ledger-row"><span>SPEED INDEX:</span><span class="ledger-val">10+^1,920,000</span></div>
-                <div class="ledger-row"><span>OVERPRESSURE:</span><span class="ledger-val">10+^1,360,000 mb</span></div>
-                <div class="ledger-row"><span>ECOSYSTEM TOTAL:</span><span class="ledger-val">10+^8,500,000 JK</span></div>
-            </div>
-            
-            <div class="intake-footer">
-                DIRECT INTAKE CHANNEL:<br>
-                <span style="font-size: 11px;">WRITERSLEGACYTEAMMAGAZINE@GMAIL.COM</span>
-            </div>
-        </div>
-
-    </div>
-
+    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video.</p>
+  </video>
 </div>
 
-</body>
-</html>
+<!-- 3. INGEST MASTER SCRIPT PROCESSORS TO RUN AUTOMATED DATA ACTIONS ON AUTOPILOT -->
+<script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Fire up the Video.js player shell environment natively inside the browser window
+    var player = videojs('famoNationConsole', {
+      playbackRates: [0.5, 1, 1.25, 1.5, 2],
+      fluid: true,
+      controlBar: {
+        children: ['playToggle', 'volumePanel', 'currentTimeDisplay', 'timeDivider', 'durationDisplay', 'progressControl', 'liveDisplay', 'remainingTimeDisplay', 'playbackRateMenuButton', 'subsCapsButton', 'audioTrackButton', 'fullscreenToggle']
+      }
+    });
+
+    // MASTER METRIC CONFIGURATION CONFIG LOGS
+    var adFileSource = "SPONSOR_AD_1.MP4"; // Hook your commercial video file directly into this track
+    var primaryMediaSource = "COZY-READY.MP4";
+    var isAdCompleted = false;
+
+    // RUN THE MANDATORY SPONSOR PREROLL LOOP TRANSFUSION THE MOMENT VISITOR HITS PLAY
+    player.one('play', function(e) {
+      if (!isAdCompleted) {
+        e.preventDefault();
+        document.getElementById('adNotice').style.display = 'block';
+        player.src({ type: 'video/mp4', src: adFileSource });
+        player.play();
+        
+        // Listen for the exact millisecond the sponsor transmission concludes
+        player.one('ended', function() {
+          document.getElementById('adNotice').style.display = 'none';
+          player.src({ type: 'video/mp4', src: primaryMediaSource });
+          player.play();
+          isAdCompleted = true;
+          console.log("[WLT-SYSTEM]: SPONSOR DECODE COMPLETE. INGESTING COGNITIVE MAIN MEDIA TIMELINE.");
+        });
+      }
+    });
+
+    // INTEGRATE AUTOMATED REAL-TIME USER ENGAGEMENT TRACKING
+    player.on('timeupdate', function() {
+      var currentProgress = Math.floor((player.currentTime() / player.duration()) * 100);
+      if (currentProgress % 25 === 0 && currentProgress > 0) {
+        console.log("[WLT-AUDIT]: ENGAGEMENT PROFILE METRICS REACHED: " + currentProgress + "% TRACK CAPTURE");
+        // This is where your custom telemetry webhook data scripts send updates to Directus on autopilot
+      }
+    });
+  });
+</script>
+<!-- ============================================================================================== -->
+<!-- [WLT-BROADCAST-END]: REPOSITORY CODE GENERATION SHARP // MASTER TERMINAL SYNC STABLE          -->
+<!-- ============================================================================================== -->
